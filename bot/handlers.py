@@ -40,6 +40,7 @@ async def generate(message: Message, state: FSMContext):
     response= await ai_generate(message.text)
     await message.answer(response)
     await state.clear()
+    await state.set_state(Chat.chat)
 
 
        
